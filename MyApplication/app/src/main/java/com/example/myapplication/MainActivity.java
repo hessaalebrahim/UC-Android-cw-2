@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
         EditText etsecodnumber = findViewById(R.id.editTextsecondnumber);
         TextView textresult = findViewById(R.id.textviewresult);
         Button calc = findViewById(R.id.buttoncalculate);
+        Button sub = findViewById(R.id.buttonsub);
+
+
 
         calc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,10 +32,30 @@ public class MainActivity extends AppCompatActivity {
                 String textb = etsecodnumber.getText().toString();
                 int y = Integer.parseInt(textb);
 
-               int z = sum(x,y);
+                int z = sum(x,y);
 
 
-               textresult.setText(String.valueOf(z));
+                textresult.setText(String.valueOf(z));
+
+
+
+
+            }
+        });
+
+        sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String texta = etfirstnumber.getText().toString();
+                int x = Integer.parseInt(texta);
+
+                String textb = etsecodnumber.getText().toString();
+                int y = Integer.parseInt(textb);
+
+                int z = sub(x,y);
+
+
+                textresult.setText(String.valueOf(z));
 
 
 
@@ -50,5 +73,10 @@ public class MainActivity extends AppCompatActivity {
 
         int a = x + y;
         return a;
+    }
+    public int sub(int x, int y){
+
+        int r = x - y;
+        return r;
     }
 }
